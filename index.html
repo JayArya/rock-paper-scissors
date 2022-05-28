@@ -5,7 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body></body>
+  <body>
+    <header>Rock Paper Scissors</header>
+    <div class="content">
+      <span class="round-result">Click one to make a move</span>
+      <span class="round-result-choices">First to score 5 points wins</span>
+      <div class="running-score">
+        <div class="player-score">Player:</div>
+        <div class="computer-score">Computer:</div>
+      </div>
+
+      <div class="buttons">
+        <button
+          class="choice-buttons"
+          onclick="playerSelection('rock')"
+          title="Rock-button"
+        >
+          🌑
+        </button>
+        <button
+          class="choice-buttons"
+          onclick="playerSelection('paper')"
+          title="Paper-button"
+        >
+          📄
+        </button>
+        <button
+          class="choice-buttons"
+          onclick="playerSelection('scissors')"
+          title="Scissors-button"
+        >
+          ✂️
+        </button>
+      </div>
+    </div>
+    <div class="final-result-modal">
+      <div class="modal-content">
+        <div class="final-result"></div>
+        <button
+          class="play-again-button"
+          onclick="playAgain()"
+          title="Play-Again-button"
+        >
+          Play Again
+        </button>
+      </div>
+    </div>
+    <footer>
+      Copyright &copy; 2022 JayArya
+      <a href="https://github.com/JayArya" target="_blank"
+        ><img
+          class="github-icon"
+          src="./assets/GitHub-Mark-Light-32px.png"
+          alt="GitHub-Mark"
+      /></a>
+    </footer>
+  </body>
 </html>
