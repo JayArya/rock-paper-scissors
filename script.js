@@ -56,7 +56,7 @@ const playAgain = () => {
 const playerSelection = (playersChoice) => {
   let result = playRound(playersChoice, computerSelection());
   roundResult.textContent = result[0];
-  roundResult.style.color = result[0] === "You Win!" ? "green" : "red";
+  roundResult.style.color = result[0] === "You Win!🎉" ? "green" : "red";
   roundResultChoices.textContent = result[1];
   playerRunningScore.textContent = `Player: ${playerScore}`;
   computerRunningScore.textContent = `Computer: ${computerScore}`;
