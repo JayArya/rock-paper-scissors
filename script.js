@@ -73,3 +73,10 @@ const playerSelection = (playersChoice) => {
     finalResultModal.style.display = "block";
   }
 };
+
+document.addEventListener("keydown", (e) => {
+  if (e.key == "a") playerSelection("rock");
+  if (e.key == "s") playerSelection("paper");
+  if (e.key == "d") playerSelection("scissors");
+  if (e.key == " ") playAgain();
+});
