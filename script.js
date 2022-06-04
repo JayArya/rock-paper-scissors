@@ -1,10 +1,14 @@
 let playerScore = 0;
 let computerScore = 0;
+let isShortcutsModalVisible = false;
 const roundResult = document.querySelector(".round-result");
 const roundResultChoices = document.querySelector(".round-result-choices");
 const playerRunningScore = document.querySelector(".player-score");
 const computerRunningScore = document.querySelector(".computer-score");
 const finalResultModal = document.querySelector(".final-result-modal");
+const keyboardShortcutsModal = document.querySelector(
+  ".keyboard-shortcuts-modal"
+);
 
 const computerSelection = () => {
   const options = ["rock", "paper", "scissors"];
@@ -53,6 +57,18 @@ const playAgain = () => {
   finalResultModal.style.display = "none";
 };
 
+const toggleKeyboardShortcutsModal = () => {
+  isShortcutsModalVisible = !isShortcutsModalVisible;
+  isShortcutsModalVisible
+    ? (keyboardShortcutsModal.style.display = "flex")
+    : (keyboardShortcutsModal.style.display = "none");
+};
+
+const dismissShortcutsModal = () => {
+  isShortcutsModalVisible = false;
+  keyboardShortcutsModal.style.display = "none";
+};
+
 const playerSelection = (playersChoice) => {
   let result = playRound(playersChoice, computerSelection());
   roundResult.textContent = result[0];
@@ -76,9 +92,10 @@ const playerSelection = (playersChoice) => {
 
 document.addEventListener("keydown", (e) => {
   if (playerScore < 5 && computerScore < 5) {
-    if (e.key == "a") playerSelection("rock");
-    if (e.key == "s") playerSelection("paper");
-    if (e.key == "d") playerSelection("scissors");
+    if (e.key == "a" || e.key == "A") playerSelection("rock");
+    if (e.key == "s" || e.key == "S") playerSelection("paper");
+    if (e.key == "d" || e.key == "D") playerSelection("scissors");
   }
   if (e.key == " ") playAgain();
+  if (e.key == "?") toggleKeyboardShortcutsModal();
 });
